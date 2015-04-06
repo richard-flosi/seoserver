@@ -15,9 +15,11 @@ returns the fully executed code to GoogleBot.
 
 # Getting started
 1. you must install PhantomJs and link into your bin so that Seo Server can call it.
-2. Seo Server is an NPM module so install via<
+2. Seo Server is an NPM module so install via
+
 ...`sudo npm install -g seoserver`
 3. Now we have access to the Seo Server command line tool
+
 ...`seoserver start`
 ...Which starts an Express server on port 3000 or
 ...`seoserver -p 4000 start`
