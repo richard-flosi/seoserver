@@ -1,7 +1,4 @@
 {
     "verbose": true,
-    "debug": false,
-    "checkCompleteInterval": 10,
-    "checkCompleteTimeDiff": 300,
-    "checkCompleteTimeout": 10000
+    "stripSelectors": []
 }
