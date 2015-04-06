@@ -67,11 +67,18 @@ There are two configuration files in `bin/`: `config.json` and `phantom-config.j
 ```
 {
     "verbose": true,
+    "x_forwarded_proto": null,
+    "x_forwarded_host": null,
     "stripSelectors": []
 }
 ```
 
 Toggle `verbose` to turn off verbose logging.
+
+You can set the `X-Forwarded-Proto` and `X-Forwarded-Host` headers in your webserver to pass them along to
+the Seo Server or set them in the config file if needed. Both will use the value from the config if set,
+then look for the header. `X-Forwarded-Proto` will default to `http` if there is no config value and the
+header is not set. `X-Forwarded-Host` must be set in the config or in the header.
 
 Add css selectors for elements you want removed from the resulting HTMLSnapshot to `stripSelectors`.
 For example, you may want to remove your javascript `script` tag so that no further javascript processes

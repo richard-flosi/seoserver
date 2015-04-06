@@ -1,4 +1,6 @@
 {
     "verbose": true,
+    "x_forwarded_proto": null,
+    "x_forwarded_host": null,
     "stripSelectors": []
 }
