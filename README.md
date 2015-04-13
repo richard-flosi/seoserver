@@ -55,6 +55,23 @@ RewriteCond %{HTTP_USER_AGENT} ^DuckDuckBot/1.0;
 RewriteRule (.*) http://address-of-seoserver:3000/%1? [P]
 ```
 
+# Returning HTTP Status Codes other than 200
+If your Javascript Application serves up 404 or other pages to users,
+then your Seo Server is going to be returning 200 responses to web crawlers
+when you really want to return a 404 or other status code.
+You can return alternate status codes to web crawlers by updating your
+Javascript application to set a special meta tag like this:
+```
+<meta name="seoserver-http-status" content="404">
+```
+This will return the same HTML content, but with the status code set to 404.
+This will tell the web crawler to no longer index or request this page as desired
+and still serve up the 404 page to your real users.
+Your Javascript Application will need to be responsible for managing the correct state
+of this meta tag.
+I suggest defaulting it to a 200 response when the user navigates to a new route
+and handling the edge case as needed.
+
 # FAQ
 Nothing here yet, but check out the examples on the left to see different types of ajaxed content.
 Also ask questions and give feedback on GitHub <a href="https://github.com/apiengine/seoserver/issues">issues</a>.
